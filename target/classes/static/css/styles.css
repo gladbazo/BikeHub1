@@ -22,6 +22,13 @@ padding-top: 50px;
 .list-group-item{
 text-align:center
 }
+.offerDetails{
+padding-top: 90px;
+    text-align: center;
+    color: white;
+    height: 150px;
+    font-size: 40px;
+}
 .hero h5 {
     padding-top: 50px;
     text-align: center;
@@ -33,7 +40,7 @@ text-align:center
 }
 .offersall {
     margin-top: 90px; /* Adjust the margin-top value to move the element lower */
-    color: dark-grey; /* Change the text color to grey */
+    color: white; /* Change the text color to grey */
     text-align: center; /* Center the text horizontally */
 }
 .box {
