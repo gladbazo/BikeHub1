@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons::head">
+</head>
+<body>
+<header th:replace="fragments/commons::nav"></header>
+<main>
+    <section class="hero">
+        <div class="container text-center mt-5">
+            <div class="box">
+                <h5 class="text-dark-grey">Take a look at our different category bikes and choose one of your liking.</h5>
+            </div>
+        </div>
+    </section>
+    <div class="index-category-cards row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="category-card card">
+
+                <a th:href="@{/category/manual}"><img src="/images/manual.jpg" class="card-img-top" alt="..."/></a>
+                <div class="card-body">
+                    <h5 class="card-title">Manual</h5>
+                    <p class="card-text">
+                        Bikes with manual transmission.
+                    </p>
+                    <a class="card-link btn btn-outline-info my-2 my-sm-0" th:href="@{/category/manual}">See all</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="category-card card">
+
+                <a th:href="@{/category/electric}"> <img src="/images/electric.jpg" class="card-img-top" alt="..."/></a>
+                <div class="card-body">
+                    <h5 class="card-title">Electric</h5>
+                    <p class="card-text">
+                        Electric bikes in order to stay green.
+                    </p>
+                    <a class="card-link btn btn-outline-info my-2 my-sm-0" th:href="@{/category/electric}">See all</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="category-card card">
+                <a th:href="@{/category/motorbike}"> <img src="/images/motorbike.jpg" class="card-img-top" alt="..."/> </a>
+                <div class="card-body">
+                    <h5 class="card-title">Motorbikes</h5>
+                    <p class="card-text">
+                        Motorbikes for adrenaline enjoyers.
+                    </p>
+                    <a class="card-link btn btn-outline-info my-2 my-sm-0" th:href="@{/category/motorbike}">See all</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer th:replace="fragments/commons::footer"></footer>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

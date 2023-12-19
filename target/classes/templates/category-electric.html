@@ -1,0 +1,48 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons::head">
+</head>
+<body>
+<header th:replace="fragments/commons::nav"></header>
+
+<div class="category-bikes">
+    <h2 class="text-center text-white mt-5">All offers for Electric bikes</h2>
+    <div th:each="offer : ${allManual}"
+         th:object="${offer}"
+         class="offers row mx-auto d-flex flex-row justify-content-center">
+        <div class="offer card col-sm-6 col-md-3  col-lg-2 m-1 p-0">
+            <div class="card-img-top-wrapper">
+                <img class="card-img-top" th:src="*{imageUrl}" alt="image">
+            </div>
+            <div class="card-body pb-1">
+                <h5 class="card-title">
+                    <th:block th:text="*{name}"></th:block>
+                </h5>
+            </div>
+            <ul class="offer-details list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="card-text"><span>• Name:  <th:block th:text="*{name}"></th:block> </span>
+                    </div>
+                    <div class="card-text"><span>• Year:  <th:block th:text="*{year}"></th:block> </span>
+                    </div>
+                    <div class="card-text"><span>• Mileage: <th:block th:text="*{mileage}"></th:block> </span>
+                    </div>
+                    <div class="card-text"><span>• Category: <th:block th:text="*{category}"></th:block> </span>
+                    </div>
+                    <div class="card-text"><span>• Price:  <th:block
+                            th:text="*{price}"></th:block> </span></div>
+                    <div class="card-text"><span>• Posted by:  <th:block
+                            th:text="*{postedBy.getUsername()}"></th:block> </span></div>
+                </li>
+            </ul>
+            <div class="card-body">
+                <!--                    <a class="card-link" th:href="@{/offers/reserve/{id}(id = *{id})}">Reserve</a>-->
+                <a class="card-link" th:href="@{/offers/{id}/details(id = *{id})}">Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="fragments/commons::footer"></footer>
+</body>
+</html>

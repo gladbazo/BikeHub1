@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons::head"></head>
+
+<body class="bg-secondary">
+<header th:replace="fragments/commons::nav"></header>
+
+<main class="profile-tab p-5 align-content-center bg-blur my-register-div">
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-7">
+                <div class="profile-card p-3 py-4" th:object="${user}">
+                    <div class="text-center mt-3">
+                        <div class="text-center"><img src="/images/profile.jpg" width="100" class="rounded-circle"></div>
+                        <h5 class="mt-2 mb-0" th:text="*{username}">Username</h5>
+
+                        <h5 class="mt-4 mb-0" th:text="|${user.firstName} ${user.lastName}|" ></h5>
+
+                        <h5 class="mt-2 mb-0" th:text="*{age}">Age</h5>
+
+                        <div class="buttons">
+                            <button onclick="history.back()" class="btn btn-outline-primary px-4">Back</button>
+                        </div>
+
+                        <!-- Username Change Form -->
+                        <div>
+                        <h1>Change Username</h1>
+                        <form id="changeUsernameForm">
+                            <label for="currentUsername">Current Username:</label>
+                            <input type="text" id="currentUsername" name="currentUsername" required><br><br>
+
+                            <label for="newUsername">New Username:</label>
+                            <input type="text" id="newUsername" name="newUsername" required><br><br>
+
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required><br><br>
+
+                            <button type="submit">Change Username</button>
+                        </form>
+                        <div id="result"></div>
+
+
+
+                        </div>
+                        <!-- End Username Change Form -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer th:replace="fragments/commons::footer"></footer>
+</body>
+<script th:src="@{../js/jquery.min.js}"></script>
+<script th:src="@{../js/bootstrap.min.js}"></script>
+<script th:src="@{../js/change_username.js}"></script>
+</html>
+

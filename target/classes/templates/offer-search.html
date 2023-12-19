@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons::head">
+
+</head>
+<body>
+<header th:replace="fragments/commons::nav"></header>
+
+<main>
+
+    <div class="container">
+        <h2 class="text-center text-white">Search for offers</h2>
+        <form th:class="search-tab"
+                th:method="post"
+                th:action="@{/offers/search}"
+                th:object="${searchOfferModel}"
+                class="form-inline"
+                style="justify-content: center; margin-top: 50px;">
+            <div style="position: relative">
+                <input
+                        th:field="*{name}"
+                        th:errorclass="is-invalid"
+                        class="form-control mr-sm-2"
+                        style="width: 250px;"
+                        type="search"
+                        placeholder="Enter the name of the offer."
+                        aria-label="Search"
+                        id="searchOffer"/>
+                <small
+                        id="searchOfferHelpInline"
+                        class="bg-danger text-light rounded invalid-feedback"
+                        style="width: 97%; position: absolute; padding: 3px 15px; text-align: center;">
+                    Try writing something this time.
+                </small>
+            </div>
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="offers row mx-auto d-flex flex-row justify-content-center" style="margin-top: 40px;">
+
+        <div th:each="offer: ${offers}" class="offer card col-sm-6 col-md-3  col-lg-2 m-1 p-0">
+            <div class="card-img-top-wrapper">
+                <img class="card-img-top" th:src="${offer.imageUrl}" alt="Car image">
+            </div>
+            <div class="card-body pb-1">
+                <h5 class="card-title" th:text="${offer.name}"></h5>
+            </div>
+            <ul class="offer-details list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="card-text"><span>• Name:  <th:block th:text="*{name}"></th:block> </span>
+                    </div>
+                    <div class="card-text"><span>• Year:  <th:block th:text="*{year}"></th:block> </span>
+                    </div>
+                    <div class="card-text"><span>• Mileage: <th:block th:text="*{mileage}"></th:block> </span>
+                    </div>
+                    <div class="card-text"><span>• Category: <th:block th:text="*{category}"></th:block> </span>
+                    </div>
+                    <div class="card-text"><span>• Price:  <th:block
+                            th:text="*{price}"></th:block> </span></div>
+                    <div class="card-text"><span> </span></div>
+                </li>
+            </ul>
+            <div class="card-body">
+                <a class="card-link" href="/" th:href="@{/offers/{id}/details(id = *{offer.id})}">Details</a>
+            </div>
+        </div>
+        <h3 th:if="${offers != null && offers.size == 0}" class="text-info">There are no offers with this name yet.</h3>
+    </div>
+
+</main>
+
+<footer th:replace="fragments/commons::footer"></footer>
+</body>
+</html>

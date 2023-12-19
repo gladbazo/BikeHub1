@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: never
+  mail:
+    from: me@localhost
+    host: localhost
+    password: ''
+    port: 1025
+    protocol: smtp
+    smtp:
+      auth: false
+      starttls:
+        enable: false
+    username: ''

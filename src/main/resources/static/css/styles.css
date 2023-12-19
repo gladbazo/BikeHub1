@@ -1,0 +1,185 @@
+body {
+    background-image: url("../images/bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.navbar .logo {
+     max-height: 50px;
+     padding-right: 100px;
+}
+.category-bikes{
+padding-top: 50px;
+    text-align: center;
+    height: 150px;
+    font-size: 17px;
+}
+.list-group-item{
+text-align:center
+}
+.hero h5 {
+    padding-top: 50px;
+    text-align: center;
+    height: 150px;
+    font-size: 30px;
+}
+.title.gold-text {
+    margin-top: 60px; /* Adjust the margin-top value to move the element lower */
+}
+.offersall {
+    margin-top: 90px; /* Adjust the margin-top value to move the element lower */
+    color: dark-grey; /* Change the text color to grey */
+    text-align: center; /* Center the text horizontally */
+}
+.box {
+    background-color: rgba(51, 51, 51, 0.5);
+    color: #fff; /* Text color */
+    padding: 20px; /* Padding for the box */
+    display: inline-block; /* Ensure the box only takes the necessary width */
+    border: 3px solid black;
+}
+.personal-footer {
+    color: yellow;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.card {
+    width: 80%;
+}
+
+.category-card img{
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, .1);
+    transition: 1s;
+}
+
+.category-card img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.index-category-cards a {
+    width: 100%;
+    color: black;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.register-form {
+    position: absolute;
+    top: 30%;
+    left: 28%;
+    width: 800px;
+    height: 600px;
+    font-weight: 800;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 12px;
+}
+
+.register-form label {
+    color: black;
+    font-weight: normal;
+    padding: 12px;
+}
+
+.register-form input {
+    padding: 10px;
+}
+
+.log-in-form label {
+    text-align: left;
+}
+
+.addoffer-form {
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    width: 800px;
+    height: 1200px;
+    font-weight: 800;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 12px;
+}
+
+.addoffer-form label {
+    color: black;
+    font-weight: normal;
+    padding: 12px;
+}
+
+.nice-pagination nav {
+    width: 20px;
+    padding: 50px;
+}
+
+.my-reservations-box button {
+    background-color: firebrick;
+}
+
+.search-tab {
+    position: relative;
+    left: 39%;
+
+}
+
+.search-tab button {
+    color: yellow;
+}
+
+.offer-comment-section {
+    grid-column: 1/4;
+    grid-row: 4;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    position: absolute;
+    right: 15%;
+}
+
+.offer-comment-section input {
+    border: 2px solid deepskyblue;
+    border-radius: 4px;
+    color: black;
+}
+
+
+.profile-card {
+    border: 2px solid deepskyblue;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: whitesmoke;
+}
+
+
+.custom-error {
+    position: absolute;
+    bottom: 80%;
+    right: 20%;
+}
+
+.admin-panel {
+    position: absolute;
+    left: 30%;
+    padding: 20px;
+    font-weight: bolder;
+}
+
+.panel-split {
+    padding-left: 50px;
+}

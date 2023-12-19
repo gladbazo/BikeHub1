@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons::head">
+
+</head>
+<body class="bg-secondary">
+<header th:replace="fragments/commons::nav"></header>
+
+<div class="container admin-panel">
+    <h1 class="title gold-text">ALL USERS</h1>
+    <hr>
+    <div class="row">
+        <div class="user row">
+            <div style="font-weight: bolder" class="prop col-md-2">Username</div>
+
+        </div>
+        <div class="panel-split row" th:each="user:${allUsers}" th:object="${user}">
+            <div class="prop col-md-1" th:text="*{username}"></div>
+
+<!--            <div class="prop col-md-1" th:each="role:*{roleEnums}" th:text="${role}"></div>-->
+            <div class="panel-split col-md-2">
+                <form th:action="@{/admin/manage-users/add-admin(username=*{username})}" th:method="PATCH">
+                    <button class="small-btn" type="submit">Make admin</button>
+                </form>
+            </div>
+            <div class="panel-split col-md-2">
+                <form th:action="@{/admin/manage-users/remove-admin(username=*{username})}" th:method="PATCH">
+                    <button class="small-btn-remove" type="submit">Remove admin</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

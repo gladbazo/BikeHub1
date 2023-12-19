@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons::head">
+</head>
+<body>
+<header th:replace="fragments/commons::nav"></header>
+
+<h1 style="left: 50%" class="custom-error">Internal Server error.</h1>
+
+<div style="position: absolute; right: 40%; bottom: 70%" class="buttons">
+    <button onclick="history.back()" class="btn btn-outline-primary px-4">Back</button>
+</div>
+</body>
+</html>
